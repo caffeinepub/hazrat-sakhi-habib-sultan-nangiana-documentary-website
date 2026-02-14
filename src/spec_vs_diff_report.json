@@ -1,49 +1,52 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-14T04:44:00.266Z",
-  "summary": "REQ-19 appears partially implemented by removing next-themes usage from App.tsx, but the diff does not show dependency removal. REQ-21 is not implemented because frontend/index.html still references /src/main.tsx instead of built /assets/* output. REQ-20 cannot be conclusively verified from the provided diff summary beyond App.tsx no longer wrapping providers.",
+  "generatedAt": "2026-02-14T04:51:33.966Z",
+  "summary": "The diff removes the hardcoded /src/main.tsx entry from frontend/index.html and adds deployment audit notes, which partially addresses the Vite/IC production entrypoint issue. However, there is no evidence of changes to IC static asset serving configuration or build/deploy pipeline to ensure the canister serves the built dist/ output. The diff also introduces backend migration-related code that was not explicitly requested and may be unrelated to the frontend deployment/runtime fix requirements.",
   "missing_requirements": [
     {
-      "id": "REQ-19",
-      "requirement": "Remove the Next.js-only `next-themes` dependency and usage so the React (Vite) app boots without runtime crashes.",
-      "reason": "App.tsx no longer uses ThemeProvider, but the diff does not show removal of the `next-themes` dependency itself (e.g., package.json/pnpm-lock/yarn.lock updates are not present in the diff summary).",
+      "id": "REQ-22",
+      "requirement": "Perform a full-project audit (frontend entrypoints, build output, and IC static asset serving configuration) and apply all necessary deployment/runtime fixes so production serves built Vite output instead of requesting /src/*.",
+      "reason": "While frontend/index.html was adjusted, the diff summary shows no concrete changes to the Internet Computer static asset serving configuration (e.g., canister asset configuration, build/deploy settings) to ensure the deployed canister serves the Vite dist/ output. Added notes describe expected behavior but are not an implementation change.",
       "evidence": [
-        "frontend/src/App.tsx (no ThemeProvider shown)",
-        "File diff summary does not include package.json / lockfile changes"
+        "frontend/DEPLOYMENT_AUDIT_NOTES.md",
+        "frontend/index.html"
       ]
     },
     {
-      "id": "REQ-21",
-      "requirement": "Fix production deployment so the Internet Computer serves the built Vite frontend output (compiled JS/CSS assets) rather than attempting to load TypeScript source from `/src/main.tsx`.",
-      "reason": "The production index.html shown still loads the TypeScript entrypoint via `<script type='module' src='/src/main.tsx'></script>` instead of referencing built assets under `/assets/...`.",
+      "id": "REQ-23",
+      "requirement": "Ensure the built index.html correctly references the compiled assets produced by Vite during the production build (dist/index.html should reference /assets/*).",
+      "reason": "The diff modifies frontend/index.html to remove the /src/main.tsx script tag, but there is no evidence showing changes that ensure the production build output (dist/index.html) references /assets/*, nor any Vite/build config changes demonstrating correct injection behavior on IC.",
       "evidence": [
-        "frontend/index.html"
+        "frontend/index.html",
+        "frontend/DEPLOYMENT_AUDIT_NOTES.md"
       ]
     }
   ],
   "hallucinated_features": [
     {
-      "description": "Added Vite dev server proxying for `/api` to `http://127.0.0.1:4943`.",
-      "reason": "The BuildRequest focuses on removing next-themes, fixing duplicated React Query provider, and serving built Vite assets in production; it does not request adding a dev proxy rule.",
+      "description": "Added a backend migration module and wired it into the main Motoko actor with an upgrade migration hook.",
+      "reason": "The BuildRequest focuses on frontend entrypoints and IC static asset serving for Vite output. Adding backend migration logic is not explicitly requested, and the request stated to add backend/migration.mo only if an existing stable state upgrade requires it (no such need is evidenced in the diff summary).",
       "evidence": [
-        "frontend/vite.config.ts"
+        "backend/migration.mo",
+        "backend/main.mo"
       ]
     },
     {
-      "description": "Added `vite-plugin-environment` configuration exposing all variables with `CANISTER_` and `DFX_` prefixes.",
-      "reason": "Not requested by the BuildRequest requirements/acceptance criteria; it introduces additional build-time behavior unrelated to the specified fixes (based on the provided diff summary).",
+      "description": "Introduced a new deployment audit notes document.",
+      "reason": "Documentation was not requested as a requirement; the request was to apply deployment/runtime fixes. This is additional scope beyond the explicitly requested changes.",
       "evidence": [
-        "frontend/vite.config.ts"
+        "frontend/DEPLOYMENT_AUDIT_NOTES.md"
       ]
     }
   ],
-  "confidence": 0.68,
+  "confidence": 0.74,
   "changed_files": [
+    "backend/main.mo",
+    "backend/migration.mo",
     "frontend-file-summaries.txt",
+    "frontend/DEPLOYMENT_AUDIT_NOTES.md",
     "frontend/index.html",
-    "frontend/src/App.tsx",
-    "frontend/vite.config.ts",
     "project_state.json"
   ]
 }

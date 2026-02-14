@@ -2,11 +2,11 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-remove-the-next-js-only-next-themes-dependency-and-usage-so-the-react-vite-app-boots-without-runtime-crashes-while-preserving-the-existing-emerald-gold-styling-and-any-existing-user-facing-behavior",
-      "featureTitle": "Remove the Next.js-only `next-themes` dependency and usage so the React (Vite) app boots without runtime crashes, while preserving the existing emerald/gold styling and any existing user-facing behavior.",
+      "featureId": "feature-perform-a-full-project-audit-frontend-entrypoints-build-output-and-ic-static-asset-serving-configuration-and-apply-all-necessary-deployment-runtime-fixes-in-a-single-update-so-the-production-canister-serves-the-built-vite-output-instead-of-trying-to-load-typescript-source-files",
+      "featureTitle": "Perform a full-project audit (frontend entrypoints, build output, and IC static asset serving configuration) and apply all necessary deployment/runtime fixes in a single update so the production canister serves the built Vite output instead of trying to load TypeScript source files.",
       "files": [
-        "frontend/index.html",
-        "frontend/src/App.tsx"
+        "frontend/DEPLOYMENT_AUDIT_NOTES.md",
+        "frontend/index.html"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -16,15 +16,15 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-19"
+        "REQ-22"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-resolve-the-duplicated-react-query-setup-by-ensuring-there-is-exactly-one-queryclientprovider-at-runtime-without-editing-any-immutable-frontend-paths",
-      "featureTitle": "Resolve the duplicated React Query setup by ensuring there is exactly one `QueryClientProvider` at runtime, without editing any immutable frontend paths.",
+      "featureId": "feature-fix-the-frontend-html-entry-so-it-is-compatible-with-production-vite-builds-on-the-internet-computer-by-removing-the-hardcoded-script-type-module-src-src-main-tsx-script-from-frontend-index-html-and-ensuring-the-built-index-html-correctly-references-the-compiled-assets-produced-by-vite-during-the-production-build",
+      "featureTitle": "Fix the frontend HTML entry so it is compatible with production Vite builds on the Internet Computer by removing the hardcoded `<script type='module' src='/src/main.tsx'></script>` from `frontend/index.html` and ensuring the built `index.html` correctly references the compiled assets produced by Vite during the production build.",
       "files": [
-        "frontend/src/App.tsx"
+        "frontend/index.html"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -34,26 +34,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-20"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-fix-production-deployment-so-the-internet-computer-serves-the-built-vite-frontend-output-compiled-js-css-assets-rather-than-attempting-to-load-typescript-source-from-src-main-tsx-eliminating-the-browser-connection-reset-unreachable-behavior",
-      "featureTitle": "Fix production deployment so the Internet Computer serves the built Vite frontend output (compiled JS/CSS assets) rather than attempting to load TypeScript source from `/src/main.tsx`, eliminating the browser “connection reset”/unreachable behavior.",
-      "files": [
-        "frontend/index.html",
-        "frontend/vite.config.ts"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-21"
+        "REQ-23"
       ],
       "confidence": "high"
     }

@@ -1,7 +1,8 @@
 import List "mo:core/List";
 import Time "mo:core/Time";
-import Runtime "mo:core/Runtime";
+import Migration "migration";
 
+(with migration = Migration.run)
 actor {
   type VisitorMessage = {
     name : Text;

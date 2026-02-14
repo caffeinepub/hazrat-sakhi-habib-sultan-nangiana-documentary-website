@@ -1,63 +1,52 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-14T04:44:00.269Z",
+  "generatedAt": "2026-02-14T04:51:33.969Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 3,
-    "implemented": 3,
+    "total": 2,
+    "implemented": 2,
     "items": [
       {
-        "id": "REQ-19",
-        "summary": "Remove the Next.js-only `next-themes` dependency and usage so the React (Vite) app boots without runtime crashes, while preserving the existing emerald/gold styling and any existing user-facing behavior.",
+        "id": "REQ-22",
+        "summary": "Perform a full-project audit (frontend entrypoints, build output, and IC static asset serving configuration) and apply all necessary deployment/runtime fixes in a single update so the production canister serves the built Vite output instead of trying to load TypeScript source files.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/App.tsx",
-          "frontend/index.html"
+          "frontend/vite.config.ts",
+          "frontend/index.html",
+          "frontend/DEPLOYMENT_AUDIT_NOTES.md"
         ],
         "matchedFiles": [
-          "frontend/src/App.tsx",
-          "frontend/index.html"
+          "frontend/index.html",
+          "frontend/DEPLOYMENT_AUDIT_NOTES.md"
         ]
       },
       {
-        "id": "REQ-20",
-        "summary": "Resolve the duplicated React Query setup by ensuring there is exactly one `QueryClientProvider` at runtime, without editing any immutable frontend paths.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/App.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/App.tsx"
-        ]
-      },
-      {
-        "id": "REQ-21",
-        "summary": "Fix production deployment so the Internet Computer serves the built Vite frontend output (compiled JS/CSS assets) rather than attempting to load TypeScript source from `/src/main.tsx`, eliminating the browser “connection reset”/unreachable behavior.",
+        "id": "REQ-23",
+        "summary": "Fix the frontend HTML entry so it is compatible with production Vite builds on the Internet Computer by removing the hardcoded `<script type='module' src='/src/main.tsx'></script>` from `frontend/index.html` and ensuring the built `index.html` correctly references the compiled assets produced by Vite during the production build.",
         "status": "implemented",
         "plannedFiles": [
           "frontend/index.html",
           "frontend/vite.config.ts"
         ],
         "matchedFiles": [
-          "frontend/index.html",
-          "frontend/vite.config.ts"
+          "frontend/index.html"
         ]
       }
     ]
   },
   "changedFiles": [
+    "backend/main.mo",
+    "backend/migration.mo",
     "build-request.json",
-    "build-template/README.md",
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
+    "frontend/DEPLOYMENT_AUDIT_NOTES.md",
     "frontend/index.html",
-    "frontend/src/App.tsx",
-    "frontend/vite.config.ts",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

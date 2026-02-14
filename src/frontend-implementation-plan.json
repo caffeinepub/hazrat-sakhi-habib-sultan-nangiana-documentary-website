@@ -1,63 +1,53 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Stabilize Vite production boot by removing next-themes, deduping React Query provider, and serving built assets",
+  "title": "Fix Vite/IC production static serving to load built assets instead of /src",
   "requirements": [
     {
-      "id": "REQ-19",
-      "summary": "Remove Next.js-only next-themes usage so the Vite React app boots without runtime crashes while keeping the existing emerald/gold styling.",
+      "id": "REQ-22",
+      "summary": "Audit and update frontend build/entry configuration so the deployed IC site serves Vite-built assets and renders through the Hero section without requesting /src paths.",
       "acceptanceCriteria": [
-        "`frontend/src/App.tsx` no longer imports or uses `ThemeProvider` from `next-themes`.",
-        "The app renders successfully in production without a blank page or runtime error related to theming.",
-        "No user-facing text is changed as part of this fix (except any unavoidable error messages being removed by virtue of the crash being fixed)."
+        "The deployed site loads successfully on the Internet Computer without browser “connection reset” / unreachable behavior.",
+        "In production, the browser Network tab shows the app is loaded from built assets (e.g., `/assets/*.js`, `/assets/*.css`) and does not request `/src/main.tsx` or any `/src/*` paths.",
+        "No runtime crash occurs during initial render (blank screen), and the app reaches the Hero section UI.",
+        "All changes are delivered together (one rebuild/redeploy) rather than multiple incremental partial fixes."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/App.tsx",
+          "path": "frontend/vite.config.ts",
           "operation": "modify",
-          "description": "Remove the `next-themes` import and `ThemeProvider` wrapper. Preserve the current dark (emerald/gold) look by setting the initial theme class on the document element (e.g., ensure the `dark` class is applied consistently) without changing any user-facing text."
+          "description": "Adjust Vite production build settings to generate an IC-friendly, self-contained dist output (asset paths and output naming) so the deployed site loads compiled assets under /assets and avoids any runtime references to /src."
         },
         {
           "path": "frontend/index.html",
           "operation": "modify",
-          "description": "Ensure the root document has the expected theme class behavior on first paint (e.g., set the `dark` class at the document level if required) to preserve the existing emerald/gold styling after removing `next-themes`, without changing any user-facing text."
-        }
-      ]
-    },
-    {
-      "id": "REQ-20",
-      "summary": "Ensure React Query is configured with exactly one QueryClientProvider at runtime without editing immutable paths.",
-      "acceptanceCriteria": [
-        "The app uses a single `QueryClientProvider` (no nested/duplicated providers).",
-        "The change does not require editing `frontend/src/main.tsx` (immutable).",
-        "React Query continues to function for visitor message submission (no runtime errors, mutation still works)."
-      ],
-      "file_operations": [
+          "description": "Align the HTML entry with the production static-asset strategy so the deployed canister serves a built-asset-based entry and does not trigger /src/* requests at runtime."
+        },
         {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Remove the local `QueryClient` instantiation and the `QueryClientProvider` wrapper from `App`, relying on the existing provider in `frontend/src/main.tsx` (immutable). Ensure the component tree still renders and React Query hooks (e.g., visitor message submission) continue working."
+          "path": "frontend/DEPLOYMENT_AUDIT_NOTES.md",
+          "operation": "create",
+          "description": "Document the verified production build + IC static serving expectations for this repo (what must be deployed from the Vite dist output, and what network requests should be observed in production) to prevent regressions."
         }
       ]
     },
     {
-      "id": "REQ-21",
-      "summary": "Adjust the frontend build configuration and shipped HTML so production serves built Vite assets instead of TypeScript source paths, preventing connection reset/blank page on deployment.",
+      "id": "REQ-23",
+      "summary": "Remove the hardcoded /src/main.tsx module script from frontend/index.html and ensure the production build references compiled /assets outputs.",
       "acceptanceCriteria": [
-        "The deployed site opens successfully in a browser (no “connection reset”, no blank page).",
-        "The production `index.html` served by the canister references built asset files (e.g., `/assets/...js`) rather than `/src/main.tsx`.",
-        "A fresh load (hard refresh) works and all sections (Hero, Documentary, Timeline, Reflection, Legacy, Story, Gallery, Contact) render."
+        "`frontend/index.html` no longer includes a script tag pointing to `/src/main.tsx`.",
+        "After running a production build, the generated `dist/index.html` references compiled asset paths under `/assets/` (hashed filenames are acceptable).",
+        "When deployed, loading the site does not produce 404s for `/src/main.tsx` and the main JS bundle is fetched successfully."
       ],
       "file_operations": [
         {
           "path": "frontend/index.html",
           "operation": "modify",
-          "description": "Update the production-served HTML to load compiled assets from the `/assets/` directory (and not `/src/main.tsx`). Keep existing metadata/content unchanged; only adjust the asset loading references required for production to boot."
+          "description": "Remove the hardcoded `<script type='module' src='/src/main.tsx'></script>` and replace it with a production-compatible reference pattern that loads the compiled bundle(s) from /assets in production."
         },
         {
           "path": "frontend/vite.config.ts",
-          "operation": "create",
-          "description": "Add a Vite configuration that builds predictable, deployable asset filenames under an `assets/` directory (and appropriate base path) so `frontend/index.html` can reference compiled JS/CSS reliably in production and hard refreshes work."
+          "operation": "modify",
+          "description": "Update Vite build configuration as needed so the compiled asset filenames/paths produced during production build match what the production HTML entry expects (ensuring dist/index.html references /assets outputs)."
         }
       ]
     }

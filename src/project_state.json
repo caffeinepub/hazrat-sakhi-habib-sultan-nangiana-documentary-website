@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 5,
+  "projectStateVersion": 7,
   "summary": "Build a fully responsive, premium Islamic documentary-style website (digital archive aesthetic) about Hazrat Sakhi Habib Sultan Nangiana with emerald/gold theme, reading-focused layout, animations, SEO, accessibility, gallery, and optional spiritual mode audio toggle.",
   "architectural_notes": [
     "Single-page documentary reading experience with multiple themed sections (hero, documentary, timeline, reflections, legacy, storytelling, gallery, contact).",
@@ -9,11 +9,13 @@
     "SEO + accessibility as first-class requirements (meta description, semantic structure, mobile-first, readable contrast).",
     "Optional ambient audio mode must be muted by default and user-controlled.",
     "Deployment constraint (IC asset canister): frontend must serve built static Vite output (e.g., /assets/*.js); index.html must not reference source entries like /src/main.tsx in production.",
-    "Avoid Next.js-only libraries (e.g., next-themes) in this Vite/React project; use a React-compatible theming approach or disable theme provider."
+    "Avoid Next.js-only libraries (e.g., next-themes) in this Vite/React project; use a React-compatible theming approach or disable theme provider.",
+    "User preference: apply fixes holistically across the codebase in a single pass (avoid incremental/turn-by-turn changes) to resolve deployment/runtime issues."
   ],
   "known_issues": [
     "Deployed site fails to open / shows 'connection reset' likely because index.html references /src/main.tsx instead of the built Vite assets output; IC cannot serve raw TS/TSX source files.",
-    "Potential runtime crash if next-themes is included (Next.js-only) in a Vite/React build, preventing the app from loading."
+    "Potential runtime crash if next-themes is included (Next.js-only) in a Vite/React build, preventing the app from loading.",
+    "Deployment error persists after prior attempt; indicates additional project-wide misconfiguration beyond index.html may still be present, requiring full-program sweep."
   ],
   "isFixRequest": true,
   "existing_features": [
@@ -176,6 +178,22 @@
         "REQ-21"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-perform-a-full-project-audit-frontend-entrypoints-build-output-and-ic-static-asset-serving-configuration-and-apply-all-necessary-deployment-runtime-fixes-in-a-single-update-so-the-production-canister-serves-the-built-vite-output-instead-of-trying-to-load-typescript-source-files",
+      "title": "Perform a full-project audit (frontend entrypoints, build output, and IC static asset serving configuration) and apply all necessary deployment/runtime fixes in a single update so the production canister serves the built Vite output instead of trying to load TypeScript source files.",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-the-frontend-html-entry-so-it-is-compatible-with-production-vite-builds-on-the-internet-computer-by-removing-the-hardcoded-script-type-module-src-src-main-tsx-script-from-frontend-index-html-and-ensuring-the-built-index-html-correctly-references-the-compiled-assets-produced-by-vite-during-the-production-build",
+      "title": "Fix the frontend HTML entry so it is compatible with production Vite builds on the Internet Computer by removing the hardcoded `<script type='module' src='/src/main.tsx'></script>` from `frontend/index.html` and ensuring the built `index.html` correctly references the compiled assets produced by Vite during the production build.",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -269,6 +287,12 @@
       "reqIds": [
         "REQ-12"
       ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-27",
+      "summary": "Perform a full codebase audit and apply all required deployment/runtime fixes in one pass (not step-by-step), including correcting index.html/Vite build entry issues across the project",
+      "reqIds": [],
       "status": "pending"
     }
   ],

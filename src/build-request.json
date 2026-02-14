@@ -1,74 +1,68 @@
 {
   "kind": "build_request",
-  "title": "Fix deployed site connection reset (remove next-themes + ensure production serves built Vite assets)",
+  "title": "Perform full codebase audit and apply all deployment/runtime fixes in one pass (stop loading /src/main.tsx on IC)",
   "priority": "high",
   "requirements": [
     {
-      "id": "REQ-19",
-      "text": "Remove the Next.js-only `next-themes` dependency and usage so the React (Vite) app boots without runtime crashes, while preserving the existing emerald/gold styling and any existing user-facing behavior.",
-      "target": "frontend",
+      "id": "REQ-22",
+      "text": "Perform a full-project audit (frontend entrypoints, build output, and IC static asset serving configuration) and apply all necessary deployment/runtime fixes in a single update so the production canister serves the built Vite output instead of trying to load TypeScript source files.",
+      "target": "both",
       "source": {
         "messageIds": [
-          "msg-10"
+          "msg-6"
         ],
         "quotes": [
-          "okay"
+          "then check the whole program and replace all things at once not turn wise"
         ]
       },
       "acceptanceCriteria": [
-        "`frontend/src/App.tsx` no longer imports or uses `ThemeProvider` from `next-themes`.",
-        "The app renders successfully in production without a blank page or runtime error related to theming.",
-        "No user-facing text is changed as part of this fix (except any unavoidable error messages being removed by virtue of the crash being fixed)."
+        "The deployed site loads successfully on the Internet Computer without browser “connection reset” / unreachable behavior.",
+        "In production, the browser Network tab shows the app is loaded from built assets (e.g., `/assets/*.js`, `/assets/*.css`) and does not request `/src/main.tsx` or any `/src/*` paths.",
+        "No runtime crash occurs during initial render (blank screen), and the app reaches the Hero section UI.",
+        "All changes are delivered together (one rebuild/redeploy) rather than multiple incremental partial fixes."
       ]
     },
     {
-      "id": "REQ-20",
-      "text": "Resolve the duplicated React Query setup by ensuring there is exactly one `QueryClientProvider` at runtime, without editing any immutable frontend paths.",
+      "id": "REQ-23",
+      "text": "Fix the frontend HTML entry so it is compatible with production Vite builds on the Internet Computer by removing the hardcoded `<script type='module' src='/src/main.tsx'></script>` from `frontend/index.html` and ensuring the built `index.html` correctly references the compiled assets produced by Vite during the production build.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-10"
+          "msg-6"
         ],
         "quotes": [
-          "okay"
+          "replace all things at once not turn wise"
         ]
       },
       "acceptanceCriteria": [
-        "The app uses a single `QueryClientProvider` (no nested/duplicated providers).",
-        "The change does not require editing `frontend/src/main.tsx` (immutable).",
-        "React Query continues to function for visitor message submission (no runtime errors, mutation still works)."
-      ]
-    },
-    {
-      "id": "REQ-21",
-      "text": "Fix production deployment so the Internet Computer serves the built Vite frontend output (compiled JS/CSS assets) rather than attempting to load TypeScript source from `/src/main.tsx`, eliminating the browser “connection reset”/unreachable behavior.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-10"
-        ],
-        "quotes": [
-          "okay"
-        ]
-      },
-      "acceptanceCriteria": [
-        "The deployed site opens successfully in a browser (no “connection reset”, no blank page).",
-        "The production `index.html` served by the canister references built asset files (e.g., `/assets/...js`) rather than `/src/main.tsx`.",
-        "A fresh load (hard refresh) works and all sections (Hero, Documentary, Timeline, Reflection, Legacy, Story, Gallery, Contact) render."
+        "`frontend/index.html` no longer includes a script tag pointing to `/src/main.tsx`.",
+        "After running a production build, the generated `dist/index.html` references compiled asset paths under `/assets/` (hashed filenames are acceptable).",
+        "When deployed, loading the site does not produce 404s for `/src/main.tsx` and the main JS bundle is fetched successfully."
       ]
     }
   ],
   "constraints": [
-    "Do not edit immutable frontend paths: `frontend/src/main.tsx`, `frontend/src/hooks/useInternetIdentity.ts(x)`, `frontend/src/hooks/useActor.ts`, and anything under `frontend/src/components/ui`.",
-    "Backend must remain a single Motoko actor in `backend/main.mo`; only add `backend/migration.mo` if existing stable state requires migration."
+    "Do not edit any files under `frontend/src/hooks/useInternetIdentity.ts`, `frontend/src/hooks/useInternetIdentity.tsx`, `frontend/src/hooks/useActor.ts`, `frontend/src/main.tsx`, `frontend/src/main.tsx`, or anything in `frontend/src/components/ui` (immutable paths must not be modified).",
+    "Backend must remain a single Motoko actor with all logic in `backend/main.mo`; add `backend/migration.mo` only if an existing stable state upgrade requires it.",
+    "Use English for any user-facing text."
   ],
   "nonGoals": [
-    "Adding new product features or new sections to the site.",
-    "Implementing third-party auth providers (only Internet Identity is allowed).",
-    "Changing the documentary content, SEO copy, or overall site theme beyond what is necessary to fix the crash and deployment issue."
+    "Adding new sections, new content, or redesigning the site UI beyond what is required to fix deployment/runtime issues.",
+    "Introducing external databases, servers, or non-supported backend technologies.",
+    "Adding real-time features (WebSockets), third-party auth providers, or any non-Internet-Identity authentication."
   ],
   "imageRequirements": {
     "required": [],
     "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
   }
 }

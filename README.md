@@ -1,2 +1,3 @@
-# hazrat-sakhi-habib-sultan-nangiana-documentary-website
-Exported from Caffeine project: Hazrat Sakhi Habib Sultan Nangiana Documentary Website
+## Hazrat Sakhi Habib Sultan Nangiana Documentary Website
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

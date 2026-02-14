@@ -1,0 +1,346 @@
+{
+  "kind": "build_request",
+  "title": "Premium Islamic documentary-style responsive website for Hazrat Sakhi Habib Sultan Nangiana (emerald & gold archive aesthetic)",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a fully responsive single-page documentary website (reading-focused) with a modern 2026 Islamic historical digital archive aesthetic using a deep emerald green + royal gold theme, soft glowing Islamic geometric background patterns, premium typography (serif headings, highly readable body), and a calm respectful spiritual atmosphere.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a fully responsive, elegant Islamic documentary-style website... designed like a modern 2026 Islamic historical digital archive. Use a deep emerald green and royal gold color theme with soft glowing Islamic geometric background patterns. Typography should be elegant and premium..."
+        ]
+      },
+      "acceptanceCriteria": [
+        "All sections render correctly on mobile, tablet, and desktop breakpoints with no horizontal scrolling.",
+        "Site-wide color palette uses emerald/green backgrounds with royal-gold accents and dividers, with consistent typography hierarchy.",
+        "Background includes subtle Islamic geometric pattern treatment that does not reduce text readability.",
+        "Meets basic accessibility: semantic headings in order, sufficient contrast, focus-visible for interactive elements, alt text for images."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement a sticky navigation bar with section anchors (Hero, Documentary, Timeline, Reflection, Shrine & Legacy, Storytelling, Gallery, Contact) and add a scroll progress indicator that reflects page scroll position.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Ensure the website includes a sticky navigation bar, scroll progress indicator..."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Navbar remains visible at the top while scrolling and highlights/indicates the active section.",
+        "Scroll progress indicator updates smoothly from 0% to 100% as the user scrolls."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Build a cinematic hero section at the top with the title “Hazrat Sakhi Habib Sultan Nangiana”, subtitle “A Spiritual Light of Punjab”, a soft blurred mosque/shrine-style background, and a primary call-to-action button labeled “Read Documentary” that scrolls to the Documentary section.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "The homepage should begin with a cinematic hero section displaying the large title “Hazrat Sakhi Habib Sultan Nangiana” and subtitle “A Spiritual Light of Punjab”... and a call-to-action button saying “Read Documentary.”"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hero contains the exact title/subtitle text and a visible CTA button with the exact label.",
+        "Clicking “Read Documentary” scrolls smoothly to the Documentary section.",
+        "Hero background is blurred/softened and remains readable for overlaid text across device sizes."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Create the main Documentary reading section and format the provided documentary content into well-structured paragraphs with drop-cap styling on the first paragraph, elegant spacing, and long-form readability (comfortable line length, line height, and max-width).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "After the hero section, create a well-formatted documentary reading section using the provided content... Format the text in beautiful structured paragraphs with a drop-cap style first letter and elegant spacing for readability."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Documentary section uses a readable max-width and typographic spacing suitable for long reading.",
+        "First paragraph includes a drop-cap style first letter.",
+        "Content includes the topics requested: life, role as Qazi, dedication to namaz and taleem, settlement near Kirana Hills in Dharema (Sargodha), and influence on the Nangiana community."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Add a subtle timeline section highlighting: early life, spiritual journey, role as Islamic judge (Qazi), and dedication to adal (justice) and taqwa, using a premium minimal timeline layout consistent with the site theme.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a structured section highlighting his early life, spiritual journey, role as Islamic judge, and dedication to adal and taqwa using a subtle timeline layout."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Timeline is visually distinct and readable on mobile (stacked) and desktop (aligned), without clutter.",
+        "Timeline includes the four requested themes as discrete items."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Create a highlighted Spiritual Reflection box discussing the passing of his children (including Mitha Masoom) and connect it to Islamic teachings of sabr and tawakkul; present it as a visually emphasized, respectful reflection module.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Include a reflective section about the passing of his children including Mitha Masoom and connect it to Islamic teachings of sabr and tawakkul, displayed in a highlighted spiritual reflection box."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Reflection box is visually emphasized (e.g., gold accent, soft glow, glass effect) while maintaining readability.",
+        "Text explicitly mentions Mitha Masoom, sabr, and tawakkul in a respectful tone."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Add a Shrine & Legacy section describing his burial in Dharema, Sargodha as a spiritual center for the Nangiana family and devotees, and include animated counters that represent generations inspired and ongoing influence.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Add a shrine and legacy section explaining his burial in Dharema Sargodha... include animated counters representing generations inspired and ongoing influence."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Section includes the requested shrine/legacy narrative and references Dharema, Sargodha.",
+        "At least 2 counters animate when scrolled into view (e.g., count-up animation).",
+        "Counters are clearly labeled (English labels) and do not imply verified statistics (use symbolic phrasing like “Generations Inspired” if numbers are illustrative)."
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Create a premium storytelling section titled “Why We Are Nangiana” explaining the traditional belief that his words carried spiritual authority, the symbolic folklore comparison to a cobra (Naang), and the origin of the clan name Nangiana; design it as an animated, premium storytelling card.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a special storytelling section titled “Why We Are Nangiana”... leading people to symbolically compare him to a cobra (Naang) in folklore, resulting in the clan being called Nangiana. Design this part as a premium storytelling card with subtle animation."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Section title is exactly “Why We Are Nangiana”.",
+        "Story content includes the three requested concepts: spiritual authority of words, Naang folklore comparison, and resulting clan name.",
+        "Storytelling card uses subtle animation on scroll/hover and matches the site theme."
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Add elegant quote highlight cards with Islamic design elements (gold accents, geometric motifs, subtle glow) to emphasize key lines; ensure the quote content is user-facing English and respectful.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Include elegant quote highlight cards with Islamic design elements."
+        ]
+      },
+      "acceptanceCriteria": [
+        "At least 2 quote highlight cards are present and styled consistently with the theme.",
+        "Cards are accessible (text selectable, adequate contrast, no essential information conveyed only by animation)."
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Implement a Gallery section using the 3 uploaded images and provide a smooth lightbox experience (open, next/prev, close, keyboard accessible).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Add a gallery section prepared for shrine images with a smooth lightbox effect. Along with the pictures I've provided"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Gallery displays thumbnails/previews for all provided images: images (5).jpeg, images (4).jpeg, images (3).jpeg.",
+        "Clicking an image opens a lightbox with close control and next/prev navigation.",
+        "Lightbox supports keyboard navigation (Esc to close; arrow keys optional) and traps focus appropriately."
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Add a simple visitor message contact form with name and message fields; validate inputs on the client and submit to the backend; show success/failure feedback states.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Include a simple visitor message contact form with name and message fields."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Form includes Name and Message fields and a Submit button.",
+        "Client validation prevents empty submissions and shows inline errors.",
+        "On submit, data is stored via backend API and the UI shows a clear success state; failures show an error state without losing user input."
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Create backend storage in the single Motoko main actor for visitor messages (name, message, timestamp) and expose methods to submit a message and optionally list messages for future admin use (listing can be unauthenticated or omitted if not needed by UI).",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Include a simple visitor message contact form..."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend provides a method callable from the frontend to persist a visitor message with timestamp.",
+        "Data persists across page reloads.",
+        "Implementation remains within a single Motoko actor (no extra backend services)."
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Add smooth modern animations: fade-in on scroll for sections, subtle parallax effects for background layers, soft golden section dividers, and glassmorphism content cards; ensure animations respect “prefers-reduced-motion”.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Include smooth fade-in scroll animations, soft golden section dividers, subtle parallax effects, glassmorphism content cards... smooth modern animations."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Major sections animate in with a subtle fade/translate when entering viewport.",
+        "Parallax is subtle and does not cause jank on mobile.",
+        "If the user has prefers-reduced-motion enabled, animations are minimized/disabled."
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "text": "Implement SEO essentials: set page title, meta description about Hazrat Sakhi Habib Sultan Nangiana, Open Graph basics (title/description/image), semantic headings, and performance-friendly asset loading.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "...fast loading, SEO optimized... meta description about Hazrat Sakhi Habib Sultan Nangiana..."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Document head includes a descriptive title and meta description referencing Hazrat Sakhi Habib Sultan Nangiana.",
+        "Open Graph tags are present (og:title, og:description, og:image).",
+        "Headings are semantic (single H1, structured H2/H3).",
+        "Images are optimized for web display (reasonable sizes) and use lazy-loading where appropriate."
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "text": "Add an Islamic-style favicon and integrate it into the site.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "...Islamic-style favicon..."
+        ]
+      },
+      "acceptanceCriteria": [
+        "A favicon is present and appears in the browser tab.",
+        "Favicon asset is included as a static file and referenced in the HTML head."
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "text": "(Optional) Add a “Spiritual Mode” toggle that enables soft ambient background audio; the audio must be muted by default and only plays after explicit user interaction; provide clear play/pause state and volume control or a gentle fixed volume.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Optionally include a “Spiritual Mode” toggle button that enables soft ambient background audio (muted by default)."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Toggle exists labeled “Spiritual Mode”.",
+        "Audio does not autoplay; it starts only after the user toggles on.",
+        "Audio starts muted by default and the user can unmute (or toggling on prompts unmute) without violating browser autoplay restrictions.",
+        "Toggle persists for the session (at least) and reflects current state correctly."
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "text": "Use the provided uploaded images as site assets (hero/gallery/section imagery) and ensure they are displayed respectfully (no aggressive cropping) with captions or context where appropriate.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Along with the pictures I've provided"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All three uploaded images are included in the built site as static assets.",
+        "Images include appropriate alt text and optional captions in English.",
+        "Layouts do not distort images and maintain aspect ratio."
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "text": "Ensure the final app is cleanly structured and deployable as a public link from the build system, with fast loading and fully mobile-friendly behavior.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "The website must be fully mobile-friendly, fast loading, SEO optimized, and provide a public deployable link."
+        ]
+      },
+      "acceptanceCriteria": [
+        "App builds successfully without errors.",
+        "App is deployable and returns a publicly accessible link from the platform’s deployment flow.",
+        "No critical layout shifts or overflow issues on small screens."
+      ]
+    }
+  ],
+  "constraints": [
+    "Frontend files under immutable paths must not be modified: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui (compose only).",
+    "Backend must remain single-actor Motoko; do not introduce additional backend services or external databases.",
+    "Use English for any user-facing text."
+  ],
+  "nonGoals": [
+    "Do not implement third-party authentication providers (only Internet Identity is allowed, and not required for this public documentary site).",
+    "Do not add real-time features (websockets/chat) or external CMS integrations.",
+    "Do not claim historically verified numeric metrics for counters unless provided; keep counters symbolic/illustrative."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Islamic geometric repeating background pattern, soft glow, emerald base with subtle gold lines (islamic-pattern-bg.dim_2400x1350.png)",
+      "Islamic-style favicon icon with geometric motif, emerald and gold, minimal and crisp (favicon-islamic.dim_512x512.png)"
+    ],
+    "edits": []
+  }
+}

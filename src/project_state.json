@@ -1,0 +1,251 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Build a fully responsive, premium Islamic documentary-style website (digital archive aesthetic) about Hazrat Sakhi Habib Sultan Nangiana with emerald/gold theme, reading-focused layout, animations, SEO, accessibility, gallery, and optional spiritual mode audio toggle.",
+  "architectural_notes": [
+    "Single-page documentary reading experience with multiple themed sections (hero, documentary, timeline, reflections, legacy, storytelling, gallery, contact).",
+    "Design system: deep emerald + royal gold palette, geometric Islamic patterns, glassmorphism cards, premium typography optimized for long-form reading.",
+    "Include smooth scroll-triggered animations, subtle parallax, sticky nav, and scroll progress indicator while keeping performance fast.",
+    "SEO + accessibility as first-class requirements (meta description, semantic structure, mobile-first, readable contrast).",
+    "Optional ambient audio mode must be muted by default and user-controlled."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Islamic geometric repeating background pattern, soft glow, emerald base with subtle gold lines (islamic-pattern-bg.dim_2400x1350.png)\n- Islamic-style favicon icon with geometric motif, emerald and gold, minimal and crisp (favicon-islamic.dim_512x512.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-fully-responsive-single-page-documentary-website-reading-focused-with-a-modern-2026-islamic-historical-digital-archive-aesthetic-using-a-deep-emerald-green-royal-gold-theme-soft-glowing-islamic-geometric-background-patterns-premium-typography-serif-headings-highly-readable-body-and-a-calm-respectful-spiritual-atmosphere",
+      "title": "Create a fully responsive single-page documentary website (reading-focused) with a modern 2026 Islamic historical digital archive aesthetic using a deep emerald green + royal gold theme, soft glowing Islamic geometric background patterns, premium typography (serif headings, highly readable body), and a calm respectful spiritual atmosphere.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-sticky-navigation-bar-with-section-anchors-hero-documentary-timeline-reflection-shrine-legacy-storytelling-gallery-contact-and-add-a-scroll-progress-indicator-that-reflects-page-scroll-position",
+      "title": "Implement a sticky navigation bar with section anchors (Hero, Documentary, Timeline, Reflection, Shrine & Legacy, Storytelling, Gallery, Contact) and add a scroll progress indicator that reflects page scroll position.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-cinematic-hero-section-at-the-top-with-the-title-hazrat-sakhi-habib-sultan-nangiana-subtitle-a-spiritual-light-of-punjab-a-soft-blurred-mosque-shrine-style-background-and-a-primary-call-to-action-button-labeled-read-documentary-that-scrolls-to-the-documentary-section",
+      "title": "Build a cinematic hero section at the top with the title “Hazrat Sakhi Habib Sultan Nangiana”, subtitle “A Spiritual Light of Punjab”, a soft blurred mosque/shrine-style background, and a primary call-to-action button labeled “Read Documentary” that scrolls to the Documentary section.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-the-main-documentary-reading-section-and-format-the-provided-documentary-content-into-well-structured-paragraphs-with-drop-cap-styling-on-the-first-paragraph-elegant-spacing-and-long-form-readability-comfortable-line-length-line-height-and-max-width",
+      "title": "Create the main Documentary reading section and format the provided documentary content into well-structured paragraphs with drop-cap styling on the first paragraph, elegant spacing, and long-form readability (comfortable line length, line height, and max-width).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-subtle-timeline-section-highlighting-early-life-spiritual-journey-role-as-islamic-judge-qazi-and-dedication-to-adal-justice-and-taqwa-using-a-premium-minimal-timeline-layout-consistent-with-the-site-theme",
+      "title": "Add a subtle timeline section highlighting: early life, spiritual journey, role as Islamic judge (Qazi), and dedication to adal (justice) and taqwa, using a premium minimal timeline layout consistent with the site theme.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-highlighted-spiritual-reflection-box-discussing-the-passing-of-his-children-including-mitha-masoom-and-connect-it-to-islamic-teachings-of-sabr-and-tawakkul-present-it-as-a-visually-emphasized-respectful-reflection-module",
+      "title": "Create a highlighted Spiritual Reflection box discussing the passing of his children (including Mitha Masoom) and connect it to Islamic teachings of sabr and tawakkul; present it as a visually emphasized, respectful reflection module.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-shrine-legacy-section-describing-his-burial-in-dharema-sargodha-as-a-spiritual-center-for-the-nangiana-family-and-devotees-and-include-animated-counters-that-represent-generations-inspired-and-ongoing-influence",
+      "title": "Add a Shrine & Legacy section describing his burial in Dharema, Sargodha as a spiritual center for the Nangiana family and devotees, and include animated counters that represent generations inspired and ongoing influence.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-premium-storytelling-section-titled-why-we-are-nangiana-explaining-the-traditional-belief-that-his-words-carried-spiritual-authority-the-symbolic-folklore-comparison-to-a-cobra-naang-and-the-origin-of-the-clan-name-nangiana-design-it-as-an-animated-premium-storytelling-card",
+      "title": "Create a premium storytelling section titled “Why We Are Nangiana” explaining the traditional belief that his words carried spiritual authority, the symbolic folklore comparison to a cobra (Naang), and the origin of the clan name Nangiana; design it as an animated, premium storytelling card.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-elegant-quote-highlight-cards-with-islamic-design-elements-gold-accents-geometric-motifs-subtle-glow-to-emphasize-key-lines-ensure-the-quote-content-is-user-facing-english-and-respectful",
+      "title": "Add elegant quote highlight cards with Islamic design elements (gold accents, geometric motifs, subtle glow) to emphasize key lines; ensure the quote content is user-facing English and respectful.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-gallery-section-using-the-3-uploaded-images-and-provide-a-smooth-lightbox-experience-open-next-prev-close-keyboard-accessible",
+      "title": "Implement a Gallery section using the 3 uploaded images and provide a smooth lightbox experience (open, next/prev, close, keyboard accessible).",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-simple-visitor-message-contact-form-with-name-and-message-fields-validate-inputs-on-the-client-and-submit-to-the-backend-show-success-failure-feedback-states",
+      "title": "Add a simple visitor message contact form with name and message fields; validate inputs on the client and submit to the backend; show success/failure feedback states.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-smooth-modern-animations-fade-in-on-scroll-for-sections-subtle-parallax-effects-for-background-layers-soft-golden-section-dividers-and-glassmorphism-content-cards-ensure-animations-respect-prefers-reduced-motion",
+      "title": "Add smooth modern animations: fade-in on scroll for sections, subtle parallax effects for background layers, soft golden section dividers, and glassmorphism content cards; ensure animations respect “prefers-reduced-motion”.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-seo-essentials-set-page-title-meta-description-about-hazrat-sakhi-habib-sultan-nangiana-open-graph-basics-title-description-image-semantic-headings-and-performance-friendly-asset-loading",
+      "title": "Implement SEO essentials: set page title, meta description about Hazrat Sakhi Habib Sultan Nangiana, Open Graph basics (title/description/image), semantic headings, and performance-friendly asset loading.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-islamic-style-favicon-and-integrate-it-into-the-site",
+      "title": "Add an Islamic-style favicon and integrate it into the site.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-optional-add-a-spiritual-mode-toggle-that-enables-soft-ambient-background-audio-the-audio-must-be-muted-by-default-and-only-plays-after-explicit-user-interaction-provide-clear-play-pause-state-and-volume-control-or-a-gentle-fixed-volume",
+      "title": "(Optional) Add a “Spiritual Mode” toggle that enables soft ambient background audio; the audio must be muted by default and only plays after explicit user interaction; provide clear play/pause state and volume control or a gentle fixed volume.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-use-the-provided-uploaded-images-as-site-assets-hero-gallery-section-imagery-and-ensure-they-are-displayed-respectfully-no-aggressive-cropping-with-captions-or-context-where-appropriate",
+      "title": "Use the provided uploaded images as site assets (hero/gallery/section imagery) and ensure they are displayed respectfully (no aggressive cropping) with captions or context where appropriate.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-final-app-is-cleanly-structured-and-deployable-as-a-public-link-from-the-build-system-with-fast-loading-and-fully-mobile-friendly-behavior",
+      "title": "Ensure the final app is cleanly structured and deployable as a public link from the build system, with fast loading and fully mobile-friendly behavior.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create responsive documentary-style website with emerald green + royal gold theme, geometric Islamic background patterns, premium typography (serif headings, readable body) and respectful spiritual tone",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Homepage cinematic hero with title/subtitle, blurred mosque/shrine background, and 'Read Documentary' CTA button",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Documentary reading section formatted for long reading (structured paragraphs, drop-cap first letter, elegant spacing) using provided content",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Timeline section covering early life, spiritual journey, role as Qazi/Islamic judge, dedication to adal and taqwa",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Spiritual reflection box about passing of children (incl. Mitha Masoom) tied to sabr and tawakkul",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Shrine & legacy section (burial in Dharema, Sargodha) plus animated counters for generations inspired/ongoing influence",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Storytelling section 'Why We Are Nangiana' as premium animated card + quote highlight cards with Islamic design elements",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Gallery section prepared for provided shrine images with smooth lightbox effect",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Simple visitor message contact form (name + message)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "UX/UI enhancements: sticky nav bar, scroll progress indicator, smooth fade-in scroll animations, subtle parallax, glassmorphism cards, golden dividers",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "SEO + accessibility + performance requirements: meta description, fast loading, clean structured code, full mobile support",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Branding assets: Islamic-style favicon",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Optional 'Spiritual Mode' toggle enabling soft ambient background audio (muted by default)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Provide a public deployable link for the final website",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-26",
+      "summary": "Create backend storage in the single Motoko main actor for visitor messages (name, message, timestamp) and expose methods to submit a message and optionally list messages for future admin use (listing can be unauthenticated or omitted if not needed by UI).",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Hazrat Sakhi Habib Sultan Nangiana Documentary Website",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

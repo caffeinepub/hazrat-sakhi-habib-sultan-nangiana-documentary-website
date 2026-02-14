@@ -1,5 +1,5 @@
 {
-  "frontend/src/App.tsx": "Main application component that orchestrates the single-page documentary layout with all sections (hero, documentary, timeline, reflection, shrine, storytelling, gallery, contact) wrapped in ThemeProvider and QueryClientProvider.",
+  "frontend/src/App.tsx": "Main application component that orchestrates the single-page documentary layout with all sections (hero, documentary, timeline, reflection, shrine, storytelling, gallery, contact); removed next-themes and duplicate QueryClientProvider, now relies on the provider in main.tsx and applies dark theme directly via useEffect.",
   "frontend/src/components/StickyNav.tsx": "Sticky navigation bar with scroll progress indicator, active section highlighting, mobile menu, and spiritual mode toggle; provides smooth scrolling to all major sections.",
   "frontend/src/components/SpiritualModeToggle.tsx": "Toggle button component that enables optional ambient background audio with muted-by-default behavior and session persistence.",
   "frontend/src/components/sections/HeroSection.tsx": "Cinematic hero section with title, subtitle, blurred shrine background image, Islamic pattern overlay, and CTA button that scrolls to documentary section.",
@@ -22,5 +22,6 @@
   "frontend/src/hooks/useSubmitVisitorMessage.ts": "React Query mutation hook for submitting visitor messages to backend with success/error toast notifications and cache invalidation.",
   "frontend/src/index.css": "Global styles with emerald green and royal gold OKLCH color system for light/dark modes, glassmorphism effects using standard CSS instead of @apply for opacity modifiers, drop-cap styling, Islamic pattern backgrounds, custom scrollbar, and reduced-motion overrides.",
   "frontend/tailwind.config.js": "Tailwind configuration extending theme with emerald/gold color tokens, Playfair Display serif font for headings, Inter sans-serif for body, and custom design system utilities.",
-  "frontend/index.html": "HTML entry point with comprehensive SEO meta tags, Open Graph tags, favicon references, Google Fonts (Inter & Playfair Display), and semantic document structure."
+  "frontend/index.html": "HTML entry point with comprehensive SEO meta tags, Open Graph tags, favicon references, Google Fonts (Inter & Playfair Display), semantic document structure, and inline script to apply dark theme immediately; references built module entry point for Vite production builds.",
+  "frontend/vite.config.ts": "Vite configuration that defines build output structure with hashed asset filenames under /assets/ directory, path aliases (@/ → src/), environment variable plugins for canister IDs, and dev server proxy for local development."
 }

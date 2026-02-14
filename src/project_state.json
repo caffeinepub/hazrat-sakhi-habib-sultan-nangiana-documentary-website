@@ -1,17 +1,21 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 3,
+  "projectStateVersion": 5,
   "summary": "Build a fully responsive, premium Islamic documentary-style website (digital archive aesthetic) about Hazrat Sakhi Habib Sultan Nangiana with emerald/gold theme, reading-focused layout, animations, SEO, accessibility, gallery, and optional spiritual mode audio toggle.",
   "architectural_notes": [
     "Single-page documentary reading experience with multiple themed sections (hero, documentary, timeline, reflections, legacy, storytelling, gallery, contact).",
     "Design system: deep emerald + royal gold palette, geometric Islamic patterns, glassmorphism cards, premium typography optimized for long-form reading.",
     "Include smooth scroll-triggered animations, subtle parallax, sticky nav, and scroll progress indicator while keeping performance fast.",
     "SEO + accessibility as first-class requirements (meta description, semantic structure, mobile-first, readable contrast).",
-    "Optional ambient audio mode must be muted by default and user-controlled."
+    "Optional ambient audio mode must be muted by default and user-controlled.",
+    "Deployment constraint (IC asset canister): frontend must serve built static Vite output (e.g., /assets/*.js); index.html must not reference source entries like /src/main.tsx in production.",
+    "Avoid Next.js-only libraries (e.g., next-themes) in this Vite/React project; use a React-compatible theming approach or disable theme provider."
   ],
-  "known_issues": [],
-  "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- Islamic geometric repeating background pattern, soft glow, emerald base with subtle gold lines (islamic-pattern-bg.dim_2400x1350.png)\n- Islamic-style favicon icon with geometric motif, emerald and gold, minimal and crisp (favicon-islamic.dim_512x512.png)",
+  "known_issues": [
+    "Deployed site fails to open / shows 'connection reset' likely because index.html references /src/main.tsx instead of the built Vite assets output; IC cannot serve raw TS/TSX source files.",
+    "Potential runtime crash if next-themes is included (Next.js-only) in a Vite/React build, preventing the app from loading."
+  ],
+  "isFixRequest": true,
   "existing_features": [
     {
       "id": "feature-create-a-fully-responsive-single-page-documentary-website-reading-focused-with-a-modern-2026-islamic-historical-digital-archive-aesthetic-using-a-deep-emerald-green-royal-gold-theme-soft-glowing-islamic-geometric-background-patterns-premium-typography-serif-headings-highly-readable-body-and-a-calm-respectful-spiritual-atmosphere",
@@ -146,6 +150,30 @@
       "title": "Ensure the final app is cleanly structured and deployable as a public link from the build system, with fast loading and fully mobile-friendly behavior.",
       "reqIds": [
         "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-the-next-js-only-next-themes-dependency-and-usage-so-the-react-vite-app-boots-without-runtime-crashes-while-preserving-the-existing-emerald-gold-styling-and-any-existing-user-facing-behavior",
+      "title": "Remove the Next.js-only `next-themes` dependency and usage so the React (Vite) app boots without runtime crashes, while preserving the existing emerald/gold styling and any existing user-facing behavior.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-resolve-the-duplicated-react-query-setup-by-ensuring-there-is-exactly-one-queryclientprovider-at-runtime-without-editing-any-immutable-frontend-paths",
+      "title": "Resolve the duplicated React Query setup by ensuring there is exactly one `QueryClientProvider` at runtime, without editing any immutable frontend paths.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-production-deployment-so-the-internet-computer-serves-the-built-vite-frontend-output-compiled-js-css-assets-rather-than-attempting-to-load-typescript-source-from-src-main-tsx-eliminating-the-browser-connection-reset-unreachable-behavior",
+      "title": "Fix production deployment so the Internet Computer serves the built Vite frontend output (compiled JS/CSS assets) rather than attempting to load TypeScript source from `/src/main.tsx`, eliminating the browser “connection reset”/unreachable behavior.",
+      "reqIds": [
+        "REQ-21"
       ],
       "version": 1
     }

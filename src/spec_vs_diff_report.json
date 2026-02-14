@@ -1,139 +1,49 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-14T04:08:13.912Z",
-  "summary": "Diff adds a full set of new frontend components/sections for a single-page documentary site (hero, documentary, timeline, reflection, shrine/legacy with counters, storytelling, gallery with dialog lightbox, contact form), plus animation hooks (IntersectionObserver, prefers-reduced-motion), sticky nav with scroll progress + active section tracking, and a Motoko backend actor intended to store visitor messages. However, several requirements are either not evidenced (SEO + favicon), partially met (quote cards count, nav labels), or backend storage/persistence appears incorrect/absent based on the shown Motoko code.",
+  "generatedAt": "2026-02-14T04:44:00.266Z",
+  "summary": "REQ-19 appears partially implemented by removing next-themes usage from App.tsx, but the diff does not show dependency removal. REQ-21 is not implemented because frontend/index.html still references /src/main.tsx instead of built /assets/* output. REQ-20 cannot be conclusively verified from the provided diff summary beyond App.tsx no longer wrapping providers.",
   "missing_requirements": [
     {
-      "id": "REQ-9",
-      "requirement": "At least 2 quote highlight cards are present and styled consistently with the theme.",
-      "reason": "Only one quote is evidenced in the Documentary section; no other section shows additional quote cards in the provided diff summary.",
+      "id": "REQ-19",
+      "requirement": "Remove the Next.js-only `next-themes` dependency and usage so the React (Vite) app boots without runtime crashes.",
+      "reason": "App.tsx no longer uses ThemeProvider, but the diff does not show removal of the `next-themes` dependency itself (e.g., package.json/pnpm-lock/yarn.lock updates are not present in the diff summary).",
       "evidence": [
-        "frontend/src/components/sections/DocumentarySection.tsx",
-        "frontend/src/components/QuoteCards.tsx"
+        "frontend/src/App.tsx (no ThemeProvider shown)",
+        "File diff summary does not include package.json / lockfile changes"
       ]
     },
     {
-      "id": "REQ-12",
-      "requirement": "Backend storage in the single Motoko main actor must persist visitor messages (name, message, timestamp) across reloads and expose a callable submit method (and optional listing).",
-      "reason": "The backend uses an immutable `let messages = List.empty(...)` and then calls `messages.add(newMessage)`/`messages.toArray()`, which is not evidenced as valid for an immutable core/List value; additionally there is no `stable` storage shown to persist across upgrades/redeploys (persistence across reloads is not evidenced).",
+      "id": "REQ-21",
+      "requirement": "Fix production deployment so the Internet Computer serves the built Vite frontend output (compiled JS/CSS assets) rather than attempting to load TypeScript source from `/src/main.tsx`.",
+      "reason": "The production index.html shown still loads the TypeScript entrypoint via `<script type='module' src='/src/main.tsx'></script>` instead of referencing built assets under `/assets/...`.",
       "evidence": [
-        "backend/main.mo"
-      ]
-    },
-    {
-      "id": "REQ-14",
-      "requirement": "Implement SEO essentials: page title, meta description referencing Hazrat Sakhi Habib Sultan Nangiana, Open Graph tags (og:title, og:description, og:image), semantic headings, and performance-friendly asset loading.",
-      "reason": "No HTML/head file changes are evidenced (e.g., index.html) to set title/meta/OG tags. Semantic headings are partially evidenced in sections, but the required head metadata is not shown in the diff summary.",
-      "evidence": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/sections/HeroSection.tsx"
-      ]
-    },
-    {
-      "id": "REQ-15",
-      "requirement": "Add an Islamic-style favicon asset and reference it in the HTML head so it appears in the browser tab.",
-      "reason": "No favicon asset addition and no HTML head reference are evidenced in the diff summary.",
-      "evidence": []
-    },
-    {
-      "id": "REQ-2",
-      "requirement": "Sticky navigation bar with section anchors (Hero, Documentary, Timeline, Reflection, Shrine & Legacy, Storytelling, Gallery, Contact).",
-      "reason": "A sticky nav with anchors exists, but the nav labels shown are not the requested section names (e.g., 'Home', 'Legacy', 'Story' instead of 'Hero', 'Shrine & Legacy', 'Storytelling'). If exact anchor naming is required, this is not met as evidenced.",
-      "evidence": [
-        "frontend/src/components/StickyNav.tsx"
-      ]
-    },
-    {
-      "id": "REQ-7",
-      "requirement": "Animated counters must not imply verified statistics; use symbolic/illustrative phrasing if numbers are illustrative.",
-      "reason": "Counters include 'Years of Spiritual Influence' with an end value of 500+, which reads as a concrete historical metric without any disclaimer in the shown code.",
-      "evidence": [
-        "frontend/src/components/sections/ShrineLegacySection.tsx"
-      ]
-    },
-    {
-      "id": "REQ-13",
-      "requirement": "Include subtle parallax effects for background layers.",
-      "reason": "Fade-in on scroll and pattern overlays are evidenced, but no parallax behavior (scroll-linked background movement) is evidenced in the diff summary.",
-      "evidence": [
-        "frontend/src/components/AnimatedSection.tsx",
-        "frontend/src/components/sections/HeroSection.tsx"
-      ]
-    },
-    {
-      "id": "REQ-10",
-      "requirement": "Lightbox supports keyboard navigation (Esc to close; arrow keys optional) and traps focus appropriately.",
-      "reason": "Arrow-key handling is evidenced, but Esc-to-close and focus trapping are not clearly evidenced in the truncated lightbox implementation; relying on `Dialog` might provide it, but the diff summary does not explicitly show it.",
-      "evidence": [
-        "frontend/src/components/sections/GallerySection.tsx"
+        "frontend/index.html"
       ]
     }
   ],
   "hallucinated_features": [
     {
-      "description": "Added a 'Spiritual Mode' audio toggle with an embedded placeholder base64 audio source.",
-      "reason": "REQ-16 is optional, but the implementation includes a placeholder audio data URI rather than a provided ambient track; this is extra/unrequested asset behavior beyond the core documentary site requirements.",
+      "description": "Added Vite dev server proxying for `/api` to `http://127.0.0.1:4943`.",
+      "reason": "The BuildRequest focuses on removing next-themes, fixing duplicated React Query provider, and serving built Vite assets in production; it does not request adding a dev proxy rule.",
       "evidence": [
-        "frontend/src/components/SpiritualModeToggle.tsx"
+        "frontend/vite.config.ts"
       ]
     },
     {
-      "description": "Added social media 'Connect' links (Facebook/X/Instagram) in the footer with placeholder href='#'.",
-      "reason": "Not requested in the BuildRequest; introduces additional UI elements unrelated to specified sections/features.",
+      "description": "Added `vite-plugin-environment` configuration exposing all variables with `CANISTER_` and `DFX_` prefixes.",
+      "reason": "Not requested by the BuildRequest requirements/acceptance criteria; it introduces additional build-time behavior unrelated to the specified fixes (based on the provided diff summary).",
       "evidence": [
-        "frontend/src/components/Footer.tsx"
-      ]
-    },
-    {
-      "description": "Introduced React Query and next-themes providers for the whole app.",
-      "reason": "Not requested explicitly; adds architecture/libraries beyond the specified requirements (though may support form submission/state).",
-      "evidence": [
-        "frontend/src/App.tsx"
-      ]
-    },
-    {
-      "description": "Added/expanded Internet Identity-based actor creation flow for authenticated vs anonymous users.",
-      "reason": "The site is described as a public documentary site and does not require authentication; implementing identity-conditioned actor creation is not requested and may conflict with the 'not required' posture for auth.",
-      "evidence": [
-        "frontend/src/hooks/useActor.ts",
-        "frontend/src/hooks/useInternetIdentity.ts"
+        "frontend/vite.config.ts"
       ]
     }
   ],
-  "confidence": 0.66,
+  "confidence": 0.68,
   "changed_files": [
-    "all_files_summary.json",
-    "backend/main.mo",
     "frontend-file-summaries.txt",
-    "frontend/index.css",
     "frontend/index.html",
     "frontend/src/App.tsx",
-    "frontend/src/components/AnimatedSection.tsx",
-    "frontend/src/components/Figure.tsx",
-    "frontend/src/components/Footer.tsx",
-    "frontend/src/components/QuoteCards.tsx",
-    "frontend/src/components/SpiritualModeToggle.tsx",
-    "frontend/src/components/StickyNav.tsx",
-    "frontend/src/components/sections/ContactSection.tsx",
-    "frontend/src/components/sections/DocumentarySection.tsx",
-    "frontend/src/components/sections/GallerySection.tsx",
-    "frontend/src/components/sections/HeroSection.tsx",
-    "frontend/src/components/sections/ReflectionSection.tsx",
-    "frontend/src/components/sections/ShrineLegacySection.tsx",
-    "frontend/src/components/sections/StorytellingSection.tsx",
-    "frontend/src/components/sections/TimelineSection.tsx",
-    "frontend/src/hooks/useActiveSection.ts",
-    "frontend/src/hooks/useActor.ts",
-    "frontend/src/hooks/useCountUpOnView.ts",
-    "frontend/src/hooks/useInternetIdentity.ts",
-    "frontend/src/hooks/usePrefersReducedMotion.ts",
-    "frontend/src/hooks/useScrollProgress.ts",
-    "frontend/src/hooks/useSessionState.ts",
-    "frontend/src/hooks/useSubmitVisitorMessage.ts",
-    "frontend/src/index.css",
-    "frontend/src/main.tsx",
-    "frontend/tailwind.config.js",
+    "frontend/vite.config.ts",
     "project_state.json"
   ]
 }

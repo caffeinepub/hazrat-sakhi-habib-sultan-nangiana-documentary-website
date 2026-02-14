@@ -2,244 +2,8 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-create-a-fully-responsive-single-page-documentary-website-reading-focused-with-a-modern-2026-islamic-historical-digital-archive-aesthetic-using-a-deep-emerald-green-royal-gold-theme-soft-glowing-islamic-geometric-background-patterns-premium-typography-serif-headings-highly-readable-body-and-a-calm-respectful-spiritual-atmosphere",
-      "featureTitle": "Create a fully responsive single-page documentary website (reading-focused) with a modern 2026 Islamic historical digital archive aesthetic using a deep emerald green + royal gold theme, soft glowing Islamic geometric background patterns, premium typography (serif headings, highly readable body), and a calm respectful spiritual atmosphere.",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/index.css",
-        "frontend/tailwind.config.js"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-1"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-implement-a-sticky-navigation-bar-with-section-anchors-hero-documentary-timeline-reflection-shrine-legacy-storytelling-gallery-contact-and-add-a-scroll-progress-indicator-that-reflects-page-scroll-position",
-      "featureTitle": "Implement a sticky navigation bar with section anchors (Hero, Documentary, Timeline, Reflection, Shrine & Legacy, Storytelling, Gallery, Contact) and add a scroll progress indicator that reflects page scroll position.",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/StickyNav.tsx",
-        "frontend/src/hooks/useActiveSection.ts",
-        "frontend/src/hooks/useScrollProgress.ts"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-2"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-build-a-cinematic-hero-section-at-the-top-with-the-title-hazrat-sakhi-habib-sultan-nangiana-subtitle-a-spiritual-light-of-punjab-a-soft-blurred-mosque-shrine-style-background-and-a-primary-call-to-action-button-labeled-read-documentary-that-scrolls-to-the-documentary-section",
-      "featureTitle": "Build a cinematic hero section at the top with the title “Hazrat Sakhi Habib Sultan Nangiana”, subtitle “A Spiritual Light of Punjab”, a soft blurred mosque/shrine-style background, and a primary call-to-action button labeled “Read Documentary” that scrolls to the Documentary section.",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/sections/HeroSection.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-3"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-create-the-main-documentary-reading-section-and-format-the-provided-documentary-content-into-well-structured-paragraphs-with-drop-cap-styling-on-the-first-paragraph-elegant-spacing-and-long-form-readability-comfortable-line-length-line-height-and-max-width",
-      "featureTitle": "Create the main Documentary reading section and format the provided documentary content into well-structured paragraphs with drop-cap styling on the first paragraph, elegant spacing, and long-form readability (comfortable line length, line height, and max-width).",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/sections/DocumentarySection.tsx",
-        "frontend/src/index.css"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-4"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-a-subtle-timeline-section-highlighting-early-life-spiritual-journey-role-as-islamic-judge-qazi-and-dedication-to-adal-justice-and-taqwa-using-a-premium-minimal-timeline-layout-consistent-with-the-site-theme",
-      "featureTitle": "Add a subtle timeline section highlighting: early life, spiritual journey, role as Islamic judge (Qazi), and dedication to adal (justice) and taqwa, using a premium minimal timeline layout consistent with the site theme.",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/sections/TimelineSection.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-5"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-create-a-highlighted-spiritual-reflection-box-discussing-the-passing-of-his-children-including-mitha-masoom-and-connect-it-to-islamic-teachings-of-sabr-and-tawakkul-present-it-as-a-visually-emphasized-respectful-reflection-module",
-      "featureTitle": "Create a highlighted Spiritual Reflection box discussing the passing of his children (including Mitha Masoom) and connect it to Islamic teachings of sabr and tawakkul; present it as a visually emphasized, respectful reflection module.",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/sections/ReflectionSection.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-6"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-a-shrine-legacy-section-describing-his-burial-in-dharema-sargodha-as-a-spiritual-center-for-the-nangiana-family-and-devotees-and-include-animated-counters-that-represent-generations-inspired-and-ongoing-influence",
-      "featureTitle": "Add a Shrine & Legacy section describing his burial in Dharema, Sargodha as a spiritual center for the Nangiana family and devotees, and include animated counters that represent generations inspired and ongoing influence.",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/sections/ShrineLegacySection.tsx",
-        "frontend/src/hooks/useCountUpOnView.ts"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-7"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-create-a-premium-storytelling-section-titled-why-we-are-nangiana-explaining-the-traditional-belief-that-his-words-carried-spiritual-authority-the-symbolic-folklore-comparison-to-a-cobra-naang-and-the-origin-of-the-clan-name-nangiana-design-it-as-an-animated-premium-storytelling-card",
-      "featureTitle": "Create a premium storytelling section titled “Why We Are Nangiana” explaining the traditional belief that his words carried spiritual authority, the symbolic folklore comparison to a cobra (Naang), and the origin of the clan name Nangiana; design it as an animated, premium storytelling card.",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/sections/StorytellingSection.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-8"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-elegant-quote-highlight-cards-with-islamic-design-elements-gold-accents-geometric-motifs-subtle-glow-to-emphasize-key-lines-ensure-the-quote-content-is-user-facing-english-and-respectful",
-      "featureTitle": "Add elegant quote highlight cards with Islamic design elements (gold accents, geometric motifs, subtle glow) to emphasize key lines; ensure the quote content is user-facing English and respectful.",
-      "files": [
-        "frontend/src/components/QuoteCards.tsx",
-        "frontend/src/components/sections/DocumentarySection.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-9"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-implement-a-gallery-section-using-the-3-uploaded-images-and-provide-a-smooth-lightbox-experience-open-next-prev-close-keyboard-accessible",
-      "featureTitle": "Implement a Gallery section using the 3 uploaded images and provide a smooth lightbox experience (open, next/prev, close, keyboard accessible).",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/sections/GallerySection.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-10"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-a-simple-visitor-message-contact-form-with-name-and-message-fields-validate-inputs-on-the-client-and-submit-to-the-backend-show-success-failure-feedback-states",
-      "featureTitle": "Add a simple visitor message contact form with name and message fields; validate inputs on the client and submit to the backend; show success/failure feedback states.",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/sections/ContactSection.tsx",
-        "frontend/src/hooks/useSubmitVisitorMessage.ts"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-11"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-smooth-modern-animations-fade-in-on-scroll-for-sections-subtle-parallax-effects-for-background-layers-soft-golden-section-dividers-and-glassmorphism-content-cards-ensure-animations-respect-prefers-reduced-motion",
-      "featureTitle": "Add smooth modern animations: fade-in on scroll for sections, subtle parallax effects for background layers, soft golden section dividers, and glassmorphism content cards; ensure animations respect “prefers-reduced-motion”.",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/AnimatedSection.tsx",
-        "frontend/src/hooks/usePrefersReducedMotion.ts",
-        "frontend/src/index.css"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-13"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-implement-seo-essentials-set-page-title-meta-description-about-hazrat-sakhi-habib-sultan-nangiana-open-graph-basics-title-description-image-semantic-headings-and-performance-friendly-asset-loading",
-      "featureTitle": "Implement SEO essentials: set page title, meta description about Hazrat Sakhi Habib Sultan Nangiana, Open Graph basics (title/description/image), semantic headings, and performance-friendly asset loading.",
+      "featureId": "feature-remove-the-next-js-only-next-themes-dependency-and-usage-so-the-react-vite-app-boots-without-runtime-crashes-while-preserving-the-existing-emerald-gold-styling-and-any-existing-user-facing-behavior",
+      "featureTitle": "Remove the Next.js-only `next-themes` dependency and usage so the React (Vite) app boots without runtime crashes, while preserving the existing emerald/gold styling and any existing user-facing behavior.",
       "files": [
         "frontend/index.html",
         "frontend/src/App.tsx"
@@ -252,15 +16,15 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-14"
+        "REQ-19"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-add-an-islamic-style-favicon-and-integrate-it-into-the-site",
-      "featureTitle": "Add an Islamic-style favicon and integrate it into the site.",
+      "featureId": "feature-resolve-the-duplicated-react-query-setup-by-ensuring-there-is-exactly-one-queryclientprovider-at-runtime-without-editing-any-immutable-frontend-paths",
+      "featureTitle": "Resolve the duplicated React Query setup by ensuring there is exactly one `QueryClientProvider` at runtime, without editing any immutable frontend paths.",
       "files": [
-        "frontend/index.html"
+        "frontend/src/App.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -270,17 +34,16 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-15"
+        "REQ-20"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-optional-add-a-spiritual-mode-toggle-that-enables-soft-ambient-background-audio-the-audio-must-be-muted-by-default-and-only-plays-after-explicit-user-interaction-provide-clear-play-pause-state-and-volume-control-or-a-gentle-fixed-volume",
-      "featureTitle": "(Optional) Add a “Spiritual Mode” toggle that enables soft ambient background audio; the audio must be muted by default and only plays after explicit user interaction; provide clear play/pause state and volume control or a gentle fixed volume.",
+      "featureId": "feature-fix-production-deployment-so-the-internet-computer-serves-the-built-vite-frontend-output-compiled-js-css-assets-rather-than-attempting-to-load-typescript-source-from-src-main-tsx-eliminating-the-browser-connection-reset-unreachable-behavior",
+      "featureTitle": "Fix production deployment so the Internet Computer serves the built Vite frontend output (compiled JS/CSS assets) rather than attempting to load TypeScript source from `/src/main.tsx`, eliminating the browser “connection reset”/unreachable behavior.",
       "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/SpiritualModeToggle.tsx",
-        "frontend/src/hooks/useSessionState.ts"
+        "frontend/index.html",
+        "frontend/vite.config.ts"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -290,46 +53,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-16"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-use-the-provided-uploaded-images-as-site-assets-hero-gallery-section-imagery-and-ensure-they-are-displayed-respectfully-no-aggressive-cropping-with-captions-or-context-where-appropriate",
-      "featureTitle": "Use the provided uploaded images as site assets (hero/gallery/section imagery) and ensure they are displayed respectfully (no aggressive cropping) with captions or context where appropriate.",
-      "files": [
-        "frontend/src/components/Figure.tsx",
-        "frontend/src/components/sections/GallerySection.tsx",
-        "frontend/src/components/sections/HeroSection.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-17"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-ensure-the-final-app-is-cleanly-structured-and-deployable-as-a-public-link-from-the-build-system-with-fast-loading-and-fully-mobile-friendly-behavior",
-      "featureTitle": "Ensure the final app is cleanly structured and deployable as a public link from the build system, with fast loading and fully mobile-friendly behavior.",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/index.css"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-18"
+        "REQ-21"
       ],
       "confidence": "high"
     }
